@@ -1,0 +1,542 @@
+
+body {
+  font-family: "Geometos", Arial, sans-serif;
+background-image:url('report-bg.png');
+margin: 0;
+  background-repeat: no-repeat;   
+  background-size:cover;
+  overflow-y: scroll;
+  background-attachment: fixed;
+}
+
+@font-face {
+  font-family: "Geometos";
+  src: url('Geometos.ttf') format('truetype');
+}
+
+#image-upload {
+  margin-bottom: 20px;
+}
+
+#image-preview-container {
+  display: none; 
+  margin-bottom: 20px;
+}
+
+#image-preview {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.header-1 {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 0.5px -1px 9px 2px #585858;
+  -moz-box-shadow: 0.5px -1px 9px 2px #585858;
+  box-shadow: 0.5px -1px 9px 2px #585858;
+}
+
+.headerlogo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+
+.logo {
+  height: 20px;
+  margin-left: 20px;
+}
+
+.navbar {
+  font-family: Geometos;
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}
+
+.navbar button {
+  color: #2b3467;
+  background-color: #cecece;
+  font-weight: bold;
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #2b3467;
+  color: #ffffff;
+}
+
+.navbar button:last-child {
+  margin-right: 0;
+}
+
+.burger-menu {
+  display: none; /* Initially hide the burger menu icon */
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  display: none; /* Initially hide the burger menu icon */
+  width: 25px;
+  height: 3px;
+  background-color: #2b3467;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2{
+color: #2b3467;
+
+
+}
+  @media (max-width: 811px) {
+    .navbar-buttons {
+      display: flex; /* Initially hide navbar buttons */
+      flex-direction: column; /* Arrange buttons in a column */
+      z-index: 999; /* Ensure it's above everything else */
+      position: absolute; /* Position it absolutely */
+      top: 250%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Center the container */
+      padding: 10px; /* Add some padding */
+      opacity: 0; /* Initially hide with opacity */
+      transition: opacity 0.3s ease; /* Add transition for opacity */
+    }
+
+    .navbar button {
+      width: 47em; /* Adjusted width for longer buttons */
+      height: 3em;
+      border-radius: 10px;
+      font-size: 15px;
+  }
+  
+  .navbar button:hover::before {
+    width: 12em;
+    border-radius: 10px;
+
+    }
+
+    .burger-menu{
+      margin-left: auto; /* Position at the right of the header */
+    }
+
+    .bar{
+      display: block;
+    }
+  
+    .navbar-buttons.active {
+      display: flex; /* Show navbar buttons when active class is applied */
+      opacity: 1; /* Fade in with opacity */
+    }
+  
+    /* Add some spacing between buttons */
+    .navbar-buttons button {
+      margin-bottom: 5px;
+    }
+  }
+  
+
+.burger-menu {
+    display: block; /* Display burger menu icon when reaching max-width */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2b3467;
+  margin: 5px 0;
+  transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.burger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 960px){
+.navbar-buttons{
+  margin-right: 10px;
+}
+}
+
+
+@media (max-width: 746px){
+  .navbar button {
+    width: 40em; /* Adjusted width for longer buttons */
+}
+}
+
+@media (max-width: 652px){
+  .navbar button {
+    width: 30em; /* Adjusted width for longer buttons */
+}
+}
+
+@media (max-width: 488px){
+  .navbar button {
+    width: 20em; /* Adjusted width for longer buttons */
+}
+}
+
+@media (max-width: 335px){
+  .navbar button {
+    width: 15em; /* Adjusted width for longer buttons */
+}
+}
+
+.reportform{
+  padding-bottom: 90px;
+}
+
+#report-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white; /* Add 10% transparency */
+    border-radius: 5px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    margin-top: 70px; 
+    font-family: Poppins, sans-serif;
+  }
+  
+  h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+
+  p {
+    color: #2b3467;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+font-weight: 600;
+margin-top: -10px;
+  }
+
+ 
+  #report {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: none;
+    overflow: hidden;
+  }
+  
+  #company {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #eb455f;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #c0394b; /* Darker shade for hover */
+  }
+
+  .image-upload-container {
+    border: 2px dashed #ddd; /* Dashed border */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#image-preview-container span {
+  margin-top: 5px;
+}
+
+.image-upload-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.image-upload-label span {
+    margin-left: 10px;
+}
+
+.image-upload-label i {
+    font-size: 24px;
+}
+
+.image-upload-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.image-preview-container {
+    display: none; /* Hide by default */
+    margin-top: 20px;
+}
+
+.image-preview-container img {
+  max-width: calc(100% - 10px); /* Adjust max-width */
+  max-height: 300px; /* Increase the maximum height */
+  display: block;
+  margin: 0 auto;
+}
+
+.file-name-label {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+  .footer {
+    background-color: #556b2f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Position at the bottom of the viewport */
+    left: 0; /* Align to the left */
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__heading-primary {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.footer__heading-secondary {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__heading-primary {
+      font-size: 20px;
+  }
+
+  .footer__heading-secondary {
+      font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #report-form {
+      margin-top: 80px; /* Adjust margin for smaller screens */
+    }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .dropdown-toggle:hover {
+  background-color: #2b3467 !important;
+  color: #ffffff !important;
+}
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: 1000;
+  min-width: 135px;
+  padding: 8px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  background-color: #cecece !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 5px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: normal;
+  color: #2b3467;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #2b3467;
+  color: #ffffff;
+}
+.navbar .dropdown-menu.show {
+  display: block;
+}
+
+.navbar .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: normal;
+  color: #2b3467 !important;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent !important;
+  border: 0 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #2b3467 !important;
+  color: #ffffff !important;
+}
+
+.reportform{
+  margin-top: -40px;
+}
+
+#brgy {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px; 
+}
+
+@media (max-height: 730px) and (max-width: 600px) {
+  html, body {
+      height: 150%;
+      overflow: scroll;
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(103, 110, 151);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.2s ease;
+}
+
+.loader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.earth {
+  display: flex;
+  justify-content: center;
+  height: 25vw;
+  width: 25vw;
+  margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.globe-holder{
+    position: absolute;
+      height: 37%;
+      width: 37%;
+    top: 22.3%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.globe {
+    position: absolute;
+  height: 132%;
+  width: 144%;
+  top: -16%;
+    left: -21%;
+}
+
+svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -9.5%;
+}
